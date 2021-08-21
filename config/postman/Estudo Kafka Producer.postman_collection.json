@@ -1,0 +1,27 @@
+{
+	"info": {
+		"_postman_id": "843d6f9d-7cae-4716-9044-087ec4564a3e",
+		"name": "Estudo Kafka Producer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "post cliente topico",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/clientes",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clientes"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
