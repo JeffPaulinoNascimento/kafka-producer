@@ -18,14 +18,14 @@ public class BaseClientProducerImpl implements BaseClientProducer {
     @Value("${spring.kafka.topic-client-consumer}")
     private String topic;
 
-    private final KafkaTemplate<String, List<Client>> kafkaTemplate;
+    private final KafkaTemplate<String, Client> kafkaTemplate;
 
     @Override
     public void execute( List<Client> clients ) {
 
         log.info( "Enviando JSON para o tópico: {} ", topic );
 
-        kafkaTemplate.send( topic, clients );
+        clients.forEach( client -> kafkaTemplate.send( topic, client ) );
 
         log.info( "Finalizando o envio para o tópico producer" );
     }
